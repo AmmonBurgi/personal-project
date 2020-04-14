@@ -3,11 +3,11 @@ import {Switch, Route} from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Home from './Components/Home/Home'
 import Entries from './Components/Entries/Entries'
-import EntryDisplay from './Components/EntryDisplay'
-import CreateEntry from './Components/CreateEntry'
-import Goals from './Components/Goals'
-import GoalDisplay from './Components/GoalDisplay'
-import CreateGoal from './Components/CreateGoal'
+import EntryDisplay from './Components/EntryDisplay/EntryDisplay'
+import CreateEntry from './Components/CreateEntry/CreateEntry'
+import Goals from './Components/Goals/Goals'
+import GoalDisplay from './Components/GoalDisplay/GoalDisplay'
+import CreateGoal from './Components/CreateGoal/CreateGoal'
 
 export default (
     <Switch>

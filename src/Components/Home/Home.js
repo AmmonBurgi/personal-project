@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import {connect} from 'react-redux'
 class Home extends Component{
     constructor(){
         super()
@@ -8,10 +8,13 @@ class Home extends Component{
         }
     }
     render(){
+        console.log(this.props)
         return(
             <div>Home Component</div>
         )
     }
 }
 
-export default Home
+const mapStateToProps = (reduxState) => reduxState
+
+export default connect(mapStateToProps)(Home)
