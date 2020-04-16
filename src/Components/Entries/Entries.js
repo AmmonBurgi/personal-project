@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {connect} from 'react-redux'
-
 class Entries extends Component{
 constructor(){
     super()
@@ -29,12 +28,16 @@ navigateEntry = () => {
     this.props.history.push('/newEntry')
 }
 
+navigateDisplay = (id) => {
+    this.props.history.push(`/entry/${id}`)
+}
+
     render(){
         const {entries} = this.state
-        const mapEntry = entries.map((entries, index) => {
-            return <div key={index}>
-                    <p>{entries.date}</p>
-                    <p>{entries.title}</p>
+        const mapEntry = entries.map((entry, index) => {
+            return <div key={index} onClick={() => this.navigateDisplay(entry.entry_id)}>
+                    <p>{entry.date}</p>
+                    <p>{entry.title}</p>
                  </div>
         })
         return(

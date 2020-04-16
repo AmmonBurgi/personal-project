@@ -24,10 +24,11 @@ app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
 
 //Entries Endpoints
-app.post('/api/createEntry', entryCtrl.createEntry)
+app.post('/api/createEntry/:id', entryCtrl.createEntry)
 // app.put('/api/editEntry', entryCtrl.editEntry)
 app.get('/api/getEntries/:id', entryCtrl.getEntries)
-// app.delete('/api/deleteEntry', entryCtrl.deleteEntry)
+app.get('/api/getEntry/:id', entryCtrl.getEntry)
+app.delete('/api/deleteEntry/:id', entryCtrl.deleteEntry)
 //Goals Endpoints
 
 massive({
