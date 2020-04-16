@@ -17,7 +17,7 @@ register = () => {
     const {email, username, password} = this.state
     axios.post('/api/register', {email, username, password})
     .then(res => {
-        getUser(res.data)
+        this.props.getUser(res.data)
         this.props.history.push('/home')
     })
 }
@@ -26,8 +26,8 @@ login = () => {
     const {email, password} = this.state
     axios.post('/api/login', {email, password})
     .then(res => {
-        console.log(res.data)
-        getUser(res.data)
+        // console.log(res.data)
+        this.props.getUser(res.data)
         this.props.history.push('/home')
     })
 }
@@ -45,6 +45,7 @@ handleChange = (event) => {
 }
 
     render(){
+        
         return(
             <div className='auth'>
                 {this.state.toggle ?
@@ -74,4 +75,4 @@ handleChange = (event) => {
 
 // const mapStateToProps = (reduxState) => reduxState
 
-export default connect(null, getUser)(Auth)
+export default connect(null, {getUser})(Auth)

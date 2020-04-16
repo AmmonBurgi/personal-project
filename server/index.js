@@ -23,6 +23,13 @@ app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
 
+//Entries Endpoints
+app.post('/api/createEntry', entryCtrl.createEntry)
+// app.put('/api/editEntry', entryCtrl.editEntry)
+app.get('/api/getEntries/:id', entryCtrl.getEntries)
+// app.delete('/api/deleteEntry', entryCtrl.deleteEntry)
+//Goals Endpoints
+
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}

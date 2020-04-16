@@ -8,9 +8,12 @@ class Home extends Component{
         }
     }
     render(){
-        console.log(this.props)
+        // console.log(this.props)
+        const {user} = this.props
         return(
-            <div>Home Component</div>
+            <div>
+                <p>{`${user.username} is logged in!`}</p>
+            </div>
         )
     }
 }
