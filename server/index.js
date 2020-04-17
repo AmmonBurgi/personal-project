@@ -25,11 +25,14 @@ app.get('/api/logout', authCtrl.logout)
 
 //Entries Endpoints
 app.post('/api/createEntry/:id', entryCtrl.createEntry)
-// app.put('/api/editEntry', entryCtrl.editEntry)
-app.get('/api/getEntries/:id', entryCtrl.getEntries)
+app.put('/api/editEntry/:id', entryCtrl.editEntry)
+app.get('/api/getEntries', entryCtrl.getEntries)
 app.get('/api/getEntry/:id', entryCtrl.getEntry)
 app.delete('/api/deleteEntry/:id', entryCtrl.deleteEntry)
+
 //Goals Endpoints
+app.get('/api/getGoals', goalCtrl.getGoals)
+app.post('/api/createGoal', goalCtrl.createGoal)
 
 massive({
     connectionString: CONNECTION_STRING,
