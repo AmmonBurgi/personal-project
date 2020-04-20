@@ -32,7 +32,11 @@ app.delete('/api/deleteEntry/:id', entryCtrl.deleteEntry)
 
 //Goals Endpoints
 app.get('/api/getGoals', goalCtrl.getGoals)
+app.get('/api/getGoal/:id', goalCtrl.getGoal)
+app.put('/api/editGoal', goalCtrl.edit)
+app.get('/api/complete', goalCtrl.completed)
 app.post('/api/createGoal', goalCtrl.createGoal)
+app.delete('/api/deleteGoal/:id', goalCtrl.deleteGoal)
 
 massive({
     connectionString: CONNECTION_STRING,

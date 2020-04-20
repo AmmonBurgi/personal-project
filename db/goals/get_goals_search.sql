@@ -1,2 +1,2 @@
 select * from pro_goals
-where (author_id = $1) and (title ilike '%' || $2 || '%');
+where (author_id = $1) and (title ilike '%' || $2 || '%') and (completed = $3);
