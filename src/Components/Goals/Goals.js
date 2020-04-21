@@ -28,7 +28,7 @@ getGoals = () => {
 getCompleted = () => {
     axios.get('/api/complete')
     .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({
             complete: res.data
         })
@@ -62,21 +62,22 @@ editCheck = (e, index) => {
 
     render(){
         let goalsMap = this.state.goals.map((element, index) => {
-            // console.log(element.completed)
+            console.log('goals', element.completed)
             return <div key={index}>
                     <div  onClick={() => this.navDisplay(element.goal_id)}>
                     <p>{element.title}</p>
                     </div>
-                    <input type='checkbox' defaultChecked={false} onChange={() => this.editCheck(false, element.goal_id)} />
+                    <input type='checkbox' defaultChecked={false} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
                 </div>
         })
 
         let completeMap = this.state.complete.map((element, index) => {
+            console.log('comp', element.completed)
             return <div key={index}>
                 <div  onClick={() => this.navDisplay(element.goal_id)}>
                     <p>{element.title}</p>
                     </div>
-                    <input type='checkbox' defaultChecked={true} onChange={() => this.editCheck(true, element.goal_id)} />
+                    <input type='checkbox' defaultChecked={true} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
             </div>
         })
         return(
