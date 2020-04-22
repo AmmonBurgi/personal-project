@@ -7,10 +7,10 @@ import styled from 'styled-components'
 const FeedBackStyle = styled('div')`
 width: 80vw;
 // height: 500px;
-border: 5px black;
-border-radius: 5px;
-padding: 5px;
-margin: 10px;
+// border: 5px white;
+// border-radius: 5px;
+// padding: 5px;
+// margin: 10px;
 position: absolute;
 bottom: 0px;
 `;

@@ -8,8 +8,8 @@ display: flex;
 height: 100vh;
 justify-content: space-around;
 align-items: center;
-background: black;
-color: white;
+background: #7295AE;
+color: #696e75;
 flex-direction: column;
 `;
 class Home extends Component{
