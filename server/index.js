@@ -6,10 +6,30 @@ const express = require('express'),
       authCtrl = require('./authController'),
       entryCtrl = require('./entryController'),
       goalCtrl = require('./goalController'),
+      feedCtrl = require('./feedController'),
       app = express(),
+      server = require('http').Server(app),
+      io = require('socket.io')(server, { origins: '*:*'}),
       port = SERVER_PORT
 
 app.use(express.json())
+// app.use(cors(corsOptions))
+io.origins('*:*') // for latest version
+
+const users= {}
+
+io.on('connection', (socket) => {
+    socket.on('new-user', name => {
+        users[socket.id] = name
+        console.log('name', name)
+        socket.broadcast.emit('user-connected', name)
+    })
+    socket.on('chat-message', message => {
+        // console.log(message)
+        socket.broadcast.emit('message-received', {message: message, name: users[socket.id]})
+    })
+    // socket.emit('chat-message', message)
+})
 
 app.use(session({
     resave: false,
@@ -38,12 +58,15 @@ app.get('/api/complete', goalCtrl.completed)
 app.post('/api/createGoal', goalCtrl.createGoal)
 app.delete('/api/deleteGoal/:id', goalCtrl.deleteGoal)
 
+//NodeMailer
+app.post('/api/feedback', feedCtrl.sendFeed)
+
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}
 }).then(db => {
     app.set('db', db)
     console.log('db connected')
-    app.listen(port, () => console.log(`Server listening on port ${port}`))
+    server.listen(port, () => console.log(`Server listening on port ${port}`))
 })
 

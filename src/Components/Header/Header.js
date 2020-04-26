@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+// import {toastify} from 'react-toastify'
 
 const HeaderStyle = styled('header')`
 display: flex;
@@ -12,6 +13,7 @@ padding: 10px;
 position: relative;
 background: #B1A296;
 box-shadow: 0px 7px 5px #696e75;
+z-index: 100;
 `; 
 
 const Align = styled('div')`
@@ -36,16 +38,17 @@ const ButtonsStyle = styled('button')`
     // border: none;
     // box-shadow: 0 4px 8px 0 black;
     margin: 10px;
-    background: #7395AE;
+    background: white;
     border: 2px solid #557A95;
-    color:  #696e75;
+    color:  #557A95;
     font-family: Andale Mono;
     text-align: center;
     font-size: 15px;
     transition: 1s;
     &:hover {
-        background:  #696e75;
-        color: #7395AE;
+        font-weight: bolder;
+        background:  #7395AE;
+        color: white;
     }
 `;
 
@@ -60,7 +63,7 @@ constructor(){
 logout = () => {
     axios.get('/api/logout')
     .then(() => {
-        alert('You are now logged out')
+        // alert('You are now logged out')
     })
 }
 

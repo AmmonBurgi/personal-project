@@ -12,7 +12,7 @@ const StyledEntries = styled('div')`
     background: #7295AE;
     flex-direction: column;
     padding: 10px;
-    height: 100vh;
+    height: 83vh;
 
 `;
 
@@ -21,34 +21,44 @@ const ButtonsStyle = styled('button')`
     height: 40px;
     border-radius: 10px;
     padding: 5px;
-    // border: none;
-    // box-shadow: 0 4px 8px 0 black;
-    background: #696e75;
-    border: 2px solid #557A95;
-    color:  #7395AE;
+    background: white;
+    // border: 2px solid #557A95;
+    color:  #557A95;
     font-family: Andale Mono;
     text-align: center;
     font-size: 12px;
-    transition: 1s;
+    transition: .5s;
     &:hover {
-        background:  #7395AE;
-        color: #696e75;
+        background:  #B1A296;
+        color: white;
+        font-weight: bolder;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 `;
 
 const Map = styled('button')`
-    width: 100%;
+    width: 50vw;
     height: 100px;
-    background: blue;
-    color: white;
-    border-radius: 50px;
+    background: white;
+    color: #557A95;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-weight: bolder;
     margin: 10px;
+    transition: 1s;
+    // border: 3px solid #557A95;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &:hover {
+        background: #B1A296;
+        color: white;
+    }
 `
 
 const Align = styled('div')`
 display: flex;
 justify-content: space-between;
-width: 40%;
+width: 45vw;
 align-items: center;
 margin: 10px;
 `;

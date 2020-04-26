@@ -9,7 +9,7 @@ const StyledGoals = styled('div')`
     background: #7295AE;
     flex-direction: column;
     padding: 10px;
-    height: 100vh;
+    height: 83vh;
 
 `;
 
@@ -18,34 +18,44 @@ const ButtonsStyle = styled('button')`
     height: 40px;
     border-radius: 10px;
     padding: 5px;
-    // border: none;
-    // box-shadow: 0 4px 8px 0 black;
-    background: #696e75;
-    border: 2px solid #557A95;
-    color:  #7395AE;
+    background: white;
+    // border: 2px solid #557A95;
+    color: #557A95;
     font-family: Andale Mono;
     text-align: center;
     font-size: 12px;
-    transition: 1s;
+    transition: .5s;
     &:hover {
-        background:  #7395AE;
-        color: #696e75;
+        background:  #B1A296;
+        color: white;
+        font-weight: bolder;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 `;
 
 const Map = styled('button')`
     width: 100%;
     height: 100px;
-    background: blue;
-    color: white;
-    border-radius: 50px;
+    background: white;
+    color: #557A95;
+    border-radius: 100px;
+    font-size: 20px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-weight: bolder;
     margin: 10px;
+    transition: 1s;
+    // border: 3px solid #557A95;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &:hover {
+        background: #B1A296;
+        color: white;
+    }
 `
 
 const Align = styled('div')`
 display: flex;
 justify-content: space-between;
-width: 40%;
+width: 45vw;
 align-items: center;
 margin: 10px;
 `;
@@ -54,6 +64,7 @@ const StyledSearch = styled('input')`
 border-radius: 10px;
 padding: 5px;
 height: 25px;
+color: #696e75;
 width: 130px;
 // margin-right: 10px;
 `;
@@ -68,14 +79,20 @@ font-weight: bold;
 margin-top: 30px;
 `;
 
-const FontStyle = styled('p')`
-bottom-border: 2px solid black;
-text-decoration: underline;
+const FontStyle = styled('h1')`
+font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 `;
 
-const Line = styled('div')`
-border-left: 6px solid black
-height: 500px;
+const Category = styled('div')`
+width: 450px;
+`
+
+const CheckBox = styled('input')`
+width: 20px;
+height: 20px;
+background: #557A95;
+color: #557A95;
+border-radius: 5px;
 `;
 
 
@@ -141,21 +158,21 @@ editCheck = (e, index) => {
     render(){
         let goalsMap = this.state.goals.map((element, index) => {
             // console.log('goals', element.completed)
-            return <Map key={element.goal_id}>
-                    <div  onClick={() => this.navDisplay(element.goal_id)}>
+            return <Map key={element.goal_id} onClick={() => this.navDisplay(element.goal_id)}>
+                    <div  >
                     <p>{element.title}</p>
                     </div>
-                    <input type='checkbox' defaultChecked={false} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
+                    <CheckBox type='checkbox' defaultChecked={false} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
                 </Map>
         })
 
         let completeMap = this.state.complete.map((element, index) => {
             // console.log('comp', element.completed)
-            return <Map key={element.goal_id}>
-                <div  onClick={() => this.navDisplay(element.goal_id)}>
+            return <Map key={element.goal_id} onClick={() => this.navDisplay(element.goal_id)}>
+                <div  >
                     <p>{element.title}</p>
                     </div>
-                    <input type='checkbox' defaultChecked={true} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
+                    <CheckBox type='checkbox' defaultChecked={true} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
             </Map>
         })
         return(
@@ -167,14 +184,14 @@ editCheck = (e, index) => {
                     <ButtonsStyle onClick={this.getGoals}>Search</ButtonsStyle>
                 </Align>
             <AlignArray>
-                    <div>
-                        <FontStyle>Goals</FontStyle>
+                    <Category>
+                        <FontStyle>Goals:</FontStyle>
                         {goalsMap}
-                    </div>
-                    <div>
-                        <FontStyle>Completed</FontStyle>
+                    </Category>
+                    <Category>
+                        <FontStyle>Completed:</FontStyle>
                         {completeMap}
-                    </div>
+                    </Category>
                 
             </AlignArray>
         </StyledGoals>

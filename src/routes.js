@@ -8,6 +8,7 @@ import CreateEntry from './Components/CreateEntry/CreateEntry'
 import Goals from './Components/Goals/Goals'
 import GoalDisplay from './Components/GoalDisplay/GoalDisplay'
 import CreateGoal from './Components/CreateGoal/CreateGoal'
+import LiveChat from './Components/LiveChat'
 
 export default (
     <Switch>
@@ -19,5 +20,6 @@ export default (
         <Route path='/goals' component={Goals} />
         <Route path='/goal/:id' component={GoalDisplay} />
         <Route path='/newGoal' component={CreateGoal} />
+        <Route path='/chatroom' component={LiveChat} />
     </Switch>
 )
