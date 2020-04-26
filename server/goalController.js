@@ -53,9 +53,20 @@ module.exports = {
         const db = req.app.get('db')
         const boolean = true
         const {user_id} = req.session.user
+        // console.log(user_id)
 
         db.goals.get_complete(user_id, boolean)
         .then(goals => res.status(200).send(goals))
+        .catch(err => console.log(err))
+    },
+    getUserGoals: (req, res) => {
+        const db = req.app.get('db')
+        const {user_id} = req.session.user
+        // console.log(req.params)
+        db.goals.get_user_goals(user_id)
+        .then(goal => {
+            res.status(200).send(goal)
+        })
         .catch(err => console.log(err))
     }
 }

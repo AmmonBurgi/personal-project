@@ -72,10 +72,11 @@ logout = () => {
             <HeaderStyle>
                 <Logo src='assets/Free_Sample_By_Wix.jpeg' alt='logo'/>
                 <Align>
-                    <Link to='/home'><ButtonsStyle className='home-button'>Home</ButtonsStyle></Link>
-                    <Link to='/entries'><ButtonsStyle className='entry-button'>Entries</ButtonsStyle></Link>
-                    <Link to='/goals'><ButtonsStyle className='goal-button'>Goals</ButtonsStyle></Link>
-                    <Link to='/'><ButtonsStyle className='logout-button' onClick={this.logout}>Logout</ButtonsStyle></Link>
+                    <Link to='/home'><ButtonsStyle>Home</ButtonsStyle></Link>
+                    <Link to='/entries'><ButtonsStyle>Entries</ButtonsStyle></Link>
+                    <Link to='/goals'><ButtonsStyle>Goals</ButtonsStyle></Link>
+                    <Link to='/chatroom'><ButtonsStyle>Chat</ButtonsStyle></Link>
+                    <Link to='/'><ButtonsStyle onClick={this.logout}>Logout</ButtonsStyle></Link>
                 </Align>
             </HeaderStyle>
         )

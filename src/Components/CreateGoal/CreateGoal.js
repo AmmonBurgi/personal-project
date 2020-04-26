@@ -27,18 +27,6 @@ height: 70%;
 position: relative;
 `;
 
-// const DateStyle = styled('input')`
-// position: absolute;
-// left: 20px;
-// top: 35px;
-// width: 150px;
-// height: 20px;
-// border-radius: 5px;
-// font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-// font-weight: bolder;
-// // bottom-border: 2px solid black;
-// // text-decoration: underline;
-// `
 
 const TitleStyle = styled('input')`
 position: absolute;
@@ -74,15 +62,16 @@ const ButtonsStyle = styled('button')`
     // border: none;
     // box-shadow: 0 4px 8px 0 black;
     background: white;
+    margin-right: 10px;
     // border: 2px solid #557A95;
     color: black;
     font-family: Andale Mono;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     transition: .5s;
     margin-top: 10px;
     &:hover {
-        background:   #557A95;
+        background:   #B1A296;
         font-weight: bolder;
         color:  white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -102,7 +91,7 @@ top: 140px;
 z-index: 1000;
 transition: .5s;
 &:hover {
-    background: #557A95;
+    background: #B1A296;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 `;

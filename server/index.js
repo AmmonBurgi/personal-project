@@ -16,7 +16,7 @@ app.use(express.json())
 // app.use(cors(corsOptions))
 io.origins('*:*') // for latest version
 
-const users= {}
+const users = {}
 
 io.on('connection', (socket) => {
     socket.on('new-user', name => {
@@ -57,6 +57,7 @@ app.put('/api/editGoal', goalCtrl.edit)
 app.get('/api/complete', goalCtrl.completed)
 app.post('/api/createGoal', goalCtrl.createGoal)
 app.delete('/api/deleteGoal/:id', goalCtrl.deleteGoal)
+app.get('/api/userGoals/', goalCtrl.getUserGoals)
 
 //NodeMailer
 app.post('/api/feedback', feedCtrl.sendFeed)

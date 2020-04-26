@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 
 const FeedBackStyle = styled('div')`
-width: 80vw;
+width: 65vw;
 // height: 500px;
 border: 5px white;
 border-radius: 5px;
@@ -15,37 +15,36 @@ position: absolute;
 bottom: 0px;
 `;
 
-const ButtonStyle = styled('button')`
-width: 120px;
-height: 40px;
-border-radius: 10px;
-padding: 5px;
-// border: none;
-// box-shadow: 0 4px 8px 0 black;
-background: #B1A296;
-border: 2px solid #557A95;
-color:  #696e75;
-font-family: Andale Mono;
-text-align: center;
-font-size: 12px;
-transition: 1s;
-margin-top: 55px;
-&:hover {
-    background:  #696e75;
-    color:  #B1A296;
-}
+const ButtonsStyle = styled('button')`
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    background: white;
+    // border: 2px solid #557A95;
+    color:  #557A95;
+    font-family: Andale Mono;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 50px;
+    transition: .5s;
+    &:hover {
+        background:  #B1A296;
+        color: white;
+        font-weight: bolder;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 `;
 
 const Titles = styled('p')`
-bottom-border: 2px solid black;
-text-decoration: underline;
 font-size: 25px;
-font-weight: bold;
+font-weight: bolder;
+font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 `;
 
 const QuillStyle = styled(ReactQuill)`
-height: 300px;
-`;
+height: 200px;
+`
 
 class FeedBack extends Component{
     constructor(){
@@ -91,7 +90,7 @@ sendFeedback = () => {
                 onChange={(e) => this.handleChange(e)}
                 >
                 </QuillStyle>
-                <ButtonStyle onClick={this.sendFeedback}>Send FeedBack</ButtonStyle>
+                <ButtonsStyle onClick={this.sendFeedback}>Send FeedBack</ButtonsStyle>
             </FeedBackStyle>
         )
     }

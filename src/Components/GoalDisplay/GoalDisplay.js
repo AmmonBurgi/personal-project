@@ -35,7 +35,7 @@ const InnerDisplay = styled('div')`
 display: flex; 
 flex-direction: column;
 align-items: center;
-border: 5px solid #557A95;
+border: 5px solid white;
 border-radius: 5px;
 margin-top: 20px;
 margin-bottom: 7px;
@@ -59,7 +59,7 @@ const ContentBorder = styled('div')`
 padding: 10px;
 width: 95%;
 height: 80%;
-border: 3px solid #557A95;
+border: 3px solid white;
 border-radius: 5px;
 overflow-wrap: break-word;
 word-wrap: break-word;
@@ -68,11 +68,11 @@ bottom: 10px;
 `
 const ContentStyle = styled('p')`
 font-size: 17px;
-width: 100%;
+width: 99%;
 overflow-wrap: break-word;
 word-wrap: break-word;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-float: left;
+text-align: left;
 // position: absolute;
 // left: 0px;
 `

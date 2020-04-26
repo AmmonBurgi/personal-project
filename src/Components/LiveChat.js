@@ -28,22 +28,25 @@ position: relative;
 width: 50%;
 padding: 10px;
 display: flex;
+overflow-wrap: break-word;
+word-wrap: break-word;
 flex-direction: column;
 justify-content: flex-start;
+align-text: left;
 
 `;
 
 const StyledMessages = styled('div')`
-display: flex;
+// display: flex;
+width: 98%;
 // flex-direction: column;
 // float: right;
 `;
 
 const CurrentUserStyle = styled('div')`
-color: #B1A296;
-
-
-display: flex;
+color: rgb(255, 230, 209);
+// display: flex;
+width: 98%;
 // float: left;
 // flex-direction: column;
 `;
@@ -121,7 +124,7 @@ class LiveChat extends Component{
         const mapMessages = this.state.messageArray.map((element, index) => {
             if(element.name === this.props.user.username){
                 return <CurrentUserStyle key={index}>
-                    <TextStyle>{element.name}</TextStyle>
+                    <TextStyle>You:</TextStyle>
                     <TextStyle>{element.message}</TextStyle>
                 </CurrentUserStyle>
             } else {

@@ -49,18 +49,18 @@ const ButtonsStyle = styled('button')`
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    // border: none;
-    // box-shadow: 0 4px 8px 0 black;
-    background: #7395AE;
+    margin: 10px;
+    background: white;
     border: 2px solid #557A95;
-    color:  #696e75;
+    color:  #557A95;
     font-family: Andale Mono;
     text-align: center;
     font-size: 15px;
     transition: 1s;
     &:hover {
-        background:  #696e75;
-        color: #7395AE;
+        font-weight: bolder;
+        background:  #7395AE;
+        color: white;
     }
 `;
 
