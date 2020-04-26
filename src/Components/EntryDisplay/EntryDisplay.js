@@ -8,7 +8,7 @@ justify-content: center;
 font-size: 30px;
 background: #7295AE;
 height: 85.4vh;
-`
+`;
 const ButtonsStyle = styled('button')`
     width: 120px;
     height: 40px;

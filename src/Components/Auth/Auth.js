@@ -27,7 +27,11 @@ color:  #696e75;
 padding: 10px;
 width: 45%;
 height: 500px;
-margin: 10%
+margin: 10%;
+@media (max-width: 768px) {
+    width: 55%;
+    height: 550px;
+}
 `;
 
 const Logo = styled('img')`
@@ -62,6 +66,11 @@ const ButtonsStyle = styled('button')`
         background:  #7395AE;
         color: white;
     }
+    @media (max-width: 768px) {
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
 `;
 
 const Toggle = styled('button')`
@@ -75,13 +84,18 @@ const Tag = styled('p')`
 position: absolute;
 bottom: 5px;
 left: 36%;
-// margin: 10px;
+@media (max-width: 768px) {
+    left: 28%
+}
 `;
 
 const AltTag = styled('p')`
 position: absolute;
 bottom: 0px;
 left: 34%;
+@media (max-width: 768px) {
+    left: 26%;
+}
 `;
 
 class Auth extends Component{

@@ -17,8 +17,8 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 `;
 
 const About = styled('p')`
-width: 40%;
-margin-top: 30px;
+width: 82%;
+// margin-top: 30px;
 `
 
 const BorderStyle = styled('div')`
@@ -44,7 +44,8 @@ const Map = styled('div')`
     font-size: 23px;
     font-family: New Century Schoolbook, TeX Gyre Schola, serif;
     font-weight: bolder;
-    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     // border: 3px solid #557A95;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -54,11 +55,20 @@ const Map = styled('div')`
 const TitleStyled = styled('p')`
 font-size: 30px;
 `
+
+const InnerBorder = styled('div')`
+width: 73%;
+border-top: 3px solid white;
+border-bottom: 3px solid white; 
+display: flex;
+justify-content: center;
+
+`;
 class Home extends Component{
     constructor(){
         super()
         this.state = {
-            userGoals: []
+            userGoals: {}
         }
     }
 
@@ -77,16 +87,23 @@ class Home extends Component{
     }
 
     render(){
-        // console.log(this.state.userGoals)
+        // console.log(this.state.userGoals.username)
+        // console.log(this.state.userGoals.title)
+        console.log(this.state.userGoals)
         return(
             <HomeStyled>
                 <BorderStyle> </BorderStyle>
-                <About>The 'Journal Of Life' was designed to be an easy way to record and save all your adventures through life! The app also allows you to set Goals that you can work towards. A Chat Room is provided so that you can share your ideas and adventures with other users.
-                    Please enjoy!
-                </About>
+                <InnerBorder>
+                    <About>The 'Journal Of Life' was designed to be an easy way to record and save all your adventures through life! The app also allows you to set Goals that you can work towards. A Chat Room is provided so that you can share your ideas and adventures with other users.
+                        Please enjoy!
+                    </About>
+                </InnerBorder>
                 <Map>
+                    {this.state.userGoals ? (<>
                     <p>{this.state.userGoals.username}'s Goal:</p>
-                    {!this.state.userGoals.title ? (<TitleStyled>No Goals Have Been Set!</TitleStyled>) : (<TitleStyled>{this.state.userGoals.title}</TitleStyled>)}
+                    <TitleStyled>{this.state.userGoals.title}</TitleStyled></>) : ( <><TitleStyled>No Goals have been set!</TitleStyled></>
+                     )}
+                   
                     
                 </Map>
                 

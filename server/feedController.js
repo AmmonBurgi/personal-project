@@ -21,5 +21,6 @@ module.exports = {
             console.log(info.messageId);
             console.log('theErr', err)
         });
+        res.sendStatus(200)
     }
 }

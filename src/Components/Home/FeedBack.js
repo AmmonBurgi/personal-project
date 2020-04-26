@@ -6,11 +6,11 @@ import axios from 'axios'
 
 const FeedBackStyle = styled('div')`
 width: 65vw;
-// height: 500px;
-border: 5px white;
-border-radius: 5px;
-padding: 5px;
-margin: 10px;
+height: 350px;
+border: 5px solid white;
+// border-radius: 5px;
+padding: 10px;
+// margin: 10px;
 position: absolute;
 bottom: 0px;
 `;
@@ -43,7 +43,8 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 `;
 
 const QuillStyle = styled(ReactQuill)`
-height: 200px;
+height: 180px;
+// background: white;
 `
 
 class FeedBack extends Component{
@@ -73,7 +74,8 @@ sendFeedback = () => {
     console.log(feedValue)
     axios.post('/api/feedback', {feedValue})
     .then(() => {
-        console.log('Feedback Sent')
+        alert('FeedBack Sent!')
+        this.setState({feedValue: ''})
     }).catch(err => console.log(err));
 }
 

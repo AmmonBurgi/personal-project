@@ -91,7 +91,7 @@ getEntries = () => {
     .then(res => {
         // console.log(res)
         this.setState({
-            entries: res.data
+            entries: res.data, searchVal: ''
         })
     })
 }

@@ -17,7 +17,7 @@ const InnerDisplay = styled('div')`
 display: flex; 
 flex-direction: column;
 align-items: center;
-border: 5px solid #557A95;
+border: 5px solid white;
 border-radius: 5px;
 margin-top: 20px;
 padding: 10px;
@@ -44,7 +44,7 @@ const ContentBorder = styled('div')`
 padding: 10px;
 width: 95%;
 height: 80%;
-border: 3px solid #557A95;
+border: 3px solid white;
 border-radius: 5px;
 // overflow-wrap: break-word;
 // word-wrap: break-word;
@@ -137,7 +137,7 @@ goBack = () => {
                 <InnerDisplay>
                     <TitleStyle name='title' onChange={e => this.handleChange(e)} placeholder='Title' />
                     <ContentBorder>
-                        <ContentStyle name='content' onChange={e => this.handleChange(e)} placeholder='Content' />
+                        <ContentStyle name='content' onChange={e => this.handleChange(e)} placeholder='Goal Details' />
                     </ContentBorder>
                 </InnerDisplay>
                 <ButtonsStyle onClick={this.createGoal}>Confirm</ButtonsStyle>

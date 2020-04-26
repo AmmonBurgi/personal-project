@@ -95,6 +95,12 @@ color: #557A95;
 border-radius: 5px;
 `;
 
+const ClickStyle = styled('div')`
+width: 80%;
+height: 10px;
+// background: blue;
+`
+
 
 class Goals extends Component{
 constructor(){
@@ -116,7 +122,7 @@ getGoals = () => {
     const {searchVal} = this.state
     axios.get(`/api/getGoals/?searchVal=${searchVal}`)
     .then(res => {
-        this.setState({goals: res.data})
+        this.setState({goals: res.data, searchVal: ''})
     }).catch(err => console.log(err))
 }
 
@@ -158,8 +164,8 @@ editCheck = (e, index) => {
     render(){
         let goalsMap = this.state.goals.map((element, index) => {
             // console.log('goals', element.completed)
-            return <Map key={element.goal_id} onClick={() => this.navDisplay(element.goal_id)}>
-                    <div  >
+            return <Map key={element.goal_id} >
+                    <div  onClick={() => this.navDisplay(element.goal_id)}>
                     <p>{element.title}</p>
                     </div>
                     <CheckBox type='checkbox' defaultChecked={false} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
@@ -168,8 +174,8 @@ editCheck = (e, index) => {
 
         let completeMap = this.state.complete.map((element, index) => {
             // console.log('comp', element.completed)
-            return <Map key={element.goal_id} onClick={() => this.navDisplay(element.goal_id)}>
-                <div  >
+            return <Map key={element.goal_id} >
+                <div  onClick={() => this.navDisplay(element.goal_id)}>
                     <p>{element.title}</p>
                     </div>
                     <CheckBox type='checkbox' defaultChecked={true} value={element.completed} onClick={() => this.editCheck(element.completed, element.goal_id)} />
@@ -180,7 +186,7 @@ editCheck = (e, index) => {
                 <Align>
                     <ButtonsStyle onClick={this.createGoal}>Create New Goal</ButtonsStyle>
                     
-                    <StyledSearch onChange={e => this.handleChange(e)} placeholder='Search by Title' />
+                    <StyledSearch value={this.state.searchVal} onChange={e => this.handleChange(e)} placeholder='Search by Title' />
                     <ButtonsStyle onClick={this.getGoals}>Search</ButtonsStyle>
                 </Align>
             <AlignArray>

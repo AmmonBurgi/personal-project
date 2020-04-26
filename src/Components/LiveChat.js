@@ -13,9 +13,10 @@ font-size: 30px;
 font-weight: bolder;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 width: 100%;
-height: 85.4vh;
+height: 85%;
 // border-right: 10px solid black;
 display: flex;
+// align-items: flex-start;
 justify-content: center;
 
 `;
@@ -23,6 +24,7 @@ const BorderStyle = styled('div')`
 border-right: 5px solid white;
 border-left: 5px solid white;
 border-top: 5px solid white;
+// border: 5px solid white;
 margin: 10px;
 position: relative;
 width: 50%;
@@ -31,13 +33,14 @@ display: flex;
 overflow-wrap: break-word;
 word-wrap: break-word;
 flex-direction: column;
-justify-content: flex-start;
-align-text: left;
-
+// align-items: flex-start;
+// justify-content: flex-start;
+// align-text: left;
+height: 94%;
 `;
 
 const StyledMessages = styled('div')`
-// display: flex;
+display: flex;
 width: 98%;
 // flex-direction: column;
 // float: right;
@@ -45,7 +48,7 @@ width: 98%;
 
 const CurrentUserStyle = styled('div')`
 color: rgb(255, 230, 209);
-// display: flex;
+display: flex;
 width: 98%;
 // float: left;
 // flex-direction: column;
@@ -86,6 +89,8 @@ const Align = styled('div')`
 width: 100%;
 display: flex;
 justify-content: center;
+position: absolute;
+top: 10px;
 align-items: center;
 `;
 class LiveChat extends Component{
