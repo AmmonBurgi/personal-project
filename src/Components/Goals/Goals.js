@@ -94,14 +94,6 @@ background: #557A95;
 color: #557A95;
 border-radius: 5px;
 `;
-
-const ClickStyle = styled('div')`
-width: 80%;
-height: 10px;
-// background: blue;
-`
-
-
 class Goals extends Component{
 constructor(){
     super()

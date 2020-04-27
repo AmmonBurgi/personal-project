@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import io from 'socket.io-client'
 import styled from 'styled-components'
-import { toast, ToastContainer } from 'react-toastify'
+// import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 const endpoint = "http://localhost:4002"
@@ -151,7 +151,7 @@ class LiveChat extends Component{
         }})
         return(
             <StyledChat>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
                 <BorderStyle>
                     <Align>
                         <StyledInput placeholder="What's on your mind?" value={this.state.message} onChange={(e)=> this.handleChange(e)}></StyledInput>

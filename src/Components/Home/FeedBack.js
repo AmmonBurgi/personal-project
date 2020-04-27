@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import styled from 'styled-components'
@@ -47,55 +47,41 @@ height: 180px;
 // background: white;
 `
 
-class FeedBack extends Component{
-    constructor(){
-        super()
-        this.state = {
-            feedValue: ''
-        }
-    }
+const FeedBack = () => {
+       
+const [feedValue, setFeedValue] = useState('')
 
-    handleChange = (val) => {
-        this.setState({
-            feedValue: val
-        })
+const handleChange = (val) => {
+        setFeedValue(val)
     }
-
-    modules = {
+const modules = {
         toolbar: [
             [{ header: [1, 2, false] }],
             ['bold', 'italic', 'underline'],
             ['image', 'code-block']
         ]
     }
-    
-sendFeedback = () => {
-    const {feedValue} = this.state
-    console.log(feedValue)
-    axios.post('/api/feedback', {feedValue})
+const sendFeedback = (value) => {
+    axios.post('/api/feedback', {feedValue: value})
     .then(() => {
         alert('FeedBack Sent!')
-        this.setState({feedValue: ''})
+        setFeedValue('')
     }).catch(err => console.log(err));
 }
 
-    render(){
-        // console.log(this.state.feedValue)
         return(
             <FeedBackStyle>
                 <Titles>SEND SOME FEEDBACK!</Titles>
                 <QuillStyle 
                 theme='snow'
-                modules={this.modules}
-                formats={this.formats}
-                value={this.state.feedValue}
-                onChange={(e) => this.handleChange(e)}
+                modules={modules}
+                value={feedValue}
+                onChange={(e) => handleChange(e)}
                 >
                 </QuillStyle>
-                <ButtonsStyle onClick={this.sendFeedback}>Send FeedBack</ButtonsStyle>
+                <ButtonsStyle onClick={() => sendFeedback(feedValue)}>Send FeedBack</ButtonsStyle>
             </FeedBackStyle>
         )
     }
-}
 
 export default FeedBack

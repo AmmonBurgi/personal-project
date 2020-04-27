@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import Feedback from './FeedBack'
 import styled from 'styled-components'
@@ -64,33 +64,19 @@ display: flex;
 justify-content: center;
 
 `;
-class Home extends Component{
-    constructor(){
-        super()
-        this.state = {
-            userGoals: {}
-        }
-    }
+const Home = (props) =>{
 
-    componentDidMount(){
-        this.getGoals()
-    }
+const [userGoals, setGoals] = useState({})
+     
 
-    getGoals = () => {
+const getGoals = () => {
         axios.get('/api/userGoals/')
         .then(res => {
-            // console.log(res)
-            this.setState({
-                userGoals: res.data[0]
-            })
+                setGoals(res.data[0])
         })
     }
 
-    render(){
-        // console.log(this.state.userGoals.username)
-        // console.log(this.state.userGoals.title)
-
-        console.log(this.props.user)
+useEffect(() =>  getGoals())
         return(
             <HomeStyled>
                 <BorderStyle> </BorderStyle>
@@ -100,9 +86,9 @@ class Home extends Component{
                     </About>
                 </InnerBorder>
                 <Map>
-                    {this.state.userGoals ? (<>
-                    <p>{this.state.userGoals.username}'s Goal:</p>
-                    <TitleStyled>{this.state.userGoals.title}</TitleStyled></>) : ( <><TitleStyled>No Goals have been set!</TitleStyled></>
+                    {userGoals ? (<>
+                    <p>{userGoals.username}'s Goal:</p>
+                    <TitleStyled>{userGoals.title}</TitleStyled></>) : ( <><TitleStyled>No Goals have been set!</TitleStyled></>
                      )}
                    
                     
@@ -113,7 +99,6 @@ class Home extends Component{
             </HomeStyled>
         )
     }
-}
 
 const mapStateToProps = (reduxState) => reduxState
 

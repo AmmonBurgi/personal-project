@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -93,44 +93,33 @@ transition: .5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 `;
-class GoalDisplay extends Component{
-constructor(){
-    super()
-    this.state = {
-        goal: []
-    }
-}
+const GoalDisplay = (props) => {
 
-componentDidMount = () => {
-    this.getGoal()
-}
+const [goal, setGoal] = useState([]) 
 
-getGoal = () => {
-    const {id} = this.props.match.params
+const getGoal = () => {
+    const {id} = props.match.params
     axios.get(`/api/getGoal/${id}`)
     .then(res => {
-        console.log(res.data)
-        this.setState({
-            goal: res.data[0]
-        })
+            setGoal(res.data[0])
     })
 }
 
-deleteGoal = () => {
-    const {id} = this.props.match.params
+const deleteGoal = (props) => {
+    // console.log(props)
+    const {id} = props.match.params
     axios.delete(`/api/deleteGoal/${id}`)
-    .then(() => this.props.history.push('/goals'))
+    .then(() => props.history.push('/goals'))
 }
 
-goBack = () => {
-    this.props.history.push('/goals')
+const goBack = () => {
+    props.history.push('/goals')
 }
-    render(){
-        // console.log(this.state.goal)
-        const {goal} = this.state
+
+useEffect((props) => getGoal(props))
         return(
             <GoalStyle>
-                <BackStyle onClick={this.goBack}>&#8592;</BackStyle>
+                <BackStyle onClick={goBack}>&#8592;</BackStyle>
                 <div>
                     <InnerDisplay>
                         <TitleStyle>{goal.title}</TitleStyle> 
@@ -141,11 +130,10 @@ goBack = () => {
 
                     
                     
-                    <ButtonsStyle onClick={this.deleteGoal}>Delete</ButtonsStyle>
+                    <ButtonsStyle onClick={() => deleteGoal(props)}>Delete</ButtonsStyle>
                 </div>
             </GoalStyle>
         )
     }
-}
 
 export default GoalDisplay

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux'
 import styled from 'styled-components'
@@ -117,51 +117,37 @@ border-radius: 5px;
 vertical-align: text-top;
 // padding: 11px 0px 11px 0px;
 `
-class CreateEntry extends Component{
-constructor(){
-    super()
-    this.state = {
-        date: '',
-        title: '',
-        content: ''
-    }
-}
+const CreateEntry = (props) => {
+const [date, setDate] = useState('')
+const [title, setTitle] = useState('')
+const [content, setContent] = useState('')
 
-createEntry = () => {
-    const {user_id} = this.props.user
-    const {date, title, content} = this.state
+const createEntry = () => {
+    const {user_id} = props.user
     axios.post(`/api/createEntry/${user_id}`, {title, content, date})
-    .then(() => this.props.history.push('/entries'))
+    .then(() => props.history.push('/entries'))
     .catch(err => console.log(err))
 }
 
-handleChange = (e) => {
-    this.setState({
-        [e.target.name]: e.target.value
-    })
+const goBack = () => {
+    props.history.push('/entries')
 }
 
-goBack = () => {
-    this.props.history.push('/entries')
-}
-
-    render(){
         return(
             <CreateEntryStyle>
-                <BackStyle onClick={this.goBack}>&#8592;</BackStyle>
+                <BackStyle onClick={goBack}>&#8592;</BackStyle>
                 <InnerDisplay>
-                    <DateStyle placeholder='Date' onChange={e => this.handleChange(e)} className='date-input' name='date' />
-                    <TitleStyle placeholder='Title' onChange={e => this.handleChange(e)} className='title-input' name='title' />
+                    <DateStyle placeholder='Date' onChange={e => setDate(e.target.value)} className='date-input' name='date' />
+                    <TitleStyle placeholder='Title' onChange={e => setTitle(e.target.value)} className='title-input' name='title' />
                     <ContentBorder>
-                        <ContentStyle type='text' placeholder='Content' onChange={e => this.handleChange(e)} className='content-input' name='content' />
+                        <ContentStyle type='text' placeholder='Content' onChange={e => setContent(e.target.value)} className='content-input' name='content' />
                     </ContentBorder>
                     
                 </InnerDisplay>
-                <ButtonsStyle onClick={this.createEntry}>Submit</ButtonsStyle>
+                <ButtonsStyle onClick={createEntry}>Submit</ButtonsStyle>
             </CreateEntryStyle>
         )
     }
-}
 
 const mapStateToProps = (reduxState) => reduxState
 

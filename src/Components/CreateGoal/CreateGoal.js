@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux'
 import styled from 'styled-components'
@@ -106,45 +106,34 @@ border-radius: 5px;
 vertical-align: text-top;
 // padding: 11px 0px 11px 0px;
 `
-class CreateGoal extends Component{
-constructor(){
-    super()
-    this.state = {
-        title: '',
-        content: ''
-    }
-}
+const CreateGoal = (props) => {
+ const [title, setTitle] = useState('')
+ const [content, setContent] = useState('')
 
-createGoal = () => {
-    const {title, content} = this.state
+const createGoal = (props) => {
     axios.post('/api/createGoal', {title, content})
-    .then(() => this.props.history.push('/goals'))
-}
+    .then(() => {
+    // console.log(props)
+    props.history.push('/goals')
+})}
 
-handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value
-    })
-}
-
-goBack = () => {
-    this.props.history.push('/goals')
+const goBack = (props) => {
+    props.history.push('/goals')
 }    
 
-    render(){
         return(
             <CreateGoalStyle>
-                <BackStyle onClick={this.goBack}>&#8592;</BackStyle>
+                <BackStyle onClick={() => goBack(props)}>&#8592;</BackStyle>
                 <InnerDisplay>
-                    <TitleStyle name='title' onChange={e => this.handleChange(e)} placeholder='Title' />
+                    <TitleStyle name='title' onChange={(e) => setTitle(e.target.value)} placeholder='Title' />
                     <ContentBorder>
-                        <ContentStyle name='content' onChange={e => this.handleChange(e)} placeholder='Goal Details' />
+                        <ContentStyle name='content' onChange={e => setContent(e.target.value)} placeholder='Goal Details' />
                     </ContentBorder>
                 </InnerDisplay>
-                <ButtonsStyle onClick={this.createGoal}>Confirm</ButtonsStyle>
+                <ButtonsStyle onClick={() => createGoal(props)}>Confirm</ButtonsStyle>
             </CreateGoalStyle>
         )
     }
-}
 
 const mapStateToProps = (reduxState) => reduxState
 
