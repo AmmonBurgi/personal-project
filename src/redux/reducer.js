@@ -1,7 +1,7 @@
 const initialState = {
     user: {}
 }
-// console.log(initialState)
+console.log(initialState)
 const GET_USER = 'GET_USER'
 
 export function getUser(userObj){

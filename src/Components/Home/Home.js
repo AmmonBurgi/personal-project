@@ -89,7 +89,8 @@ class Home extends Component{
     render(){
         // console.log(this.state.userGoals.username)
         // console.log(this.state.userGoals.title)
-        console.log(this.state.userGoals)
+
+        console.log(this.props.user)
         return(
             <HomeStyled>
                 <BorderStyle> </BorderStyle>

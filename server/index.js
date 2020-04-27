@@ -8,6 +8,7 @@ const express = require('express'),
       goalCtrl = require('./goalController'),
       feedCtrl = require('./feedController'),
       app = express(),
+      path = require('path'),
       server = require('http').Server(app),
       io = require('socket.io')(server, { origins: '*:*'}),
       port = SERVER_PORT
@@ -28,8 +29,16 @@ io.on('connection', (socket) => {
         // console.log(message)
         socket.broadcast.emit('message-received', {message: message, name: users[socket.id]})
     })
-    // socket.emit('chat-message', message)
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('user-disconnected', users[socket.id])
+        // delete users[socket.id]
+    })
 })
+
+// app.use(express.static(__dirname + '/../build'))
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+// })
 
 app.use(session({
     resave: false,

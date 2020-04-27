@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import io from 'socket.io-client'
 import styled from 'styled-components'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const endpoint = "http://localhost:4002"
 const socket = io(endpoint)
@@ -98,19 +100,27 @@ class LiveChat extends Component{
         super()
         this.state={
             message: '',
-            messageArray: []
+            messageArray: [],
+            connection: ''
         }
     }
 
     componentDidMount(){
-        socket.on("chat-message", data => {
-            // console.log(data)
-        });
         socket.on('message-received', (data) => {
             let newArray = [...this.state.messageArray, data]
             return this.setState({messageArray: newArray})
         })
         socket.emit('new-user', this.props.user.username)
+        socket.on('user-connected', name => {
+            // toast.info(`${name} connected!`)
+            // alert(`${name} connected`)
+            this.setState({connection: `${name} connected`})
+        })
+        socket.on('user-disconnected', name => {
+            // toast.info(`${name} disconnected!`)
+            // alert(`${name} disconnected`)
+            this.setState({connection: `${name} disconnected`})
+        })
     }
     sendMessage = () => {
         socket.emit('chat-message', this.state.message)
@@ -125,7 +135,7 @@ class LiveChat extends Component{
         })
     }
     render(){
-        // console.log(this.state.messageArray)
+        console.log(this.state.connection)
         const mapMessages = this.state.messageArray.map((element, index) => {
             if(element.name === this.props.user.username){
                 return <CurrentUserStyle key={index}>
@@ -141,11 +151,13 @@ class LiveChat extends Component{
         }})
         return(
             <StyledChat>
+                <ToastContainer />
                 <BorderStyle>
                     <Align>
                         <StyledInput placeholder="What's on your mind?" value={this.state.message} onChange={(e)=> this.handleChange(e)}></StyledInput>
                         <StyledButton onClick={this.sendMessage}>Send</StyledButton>
                     </Align>
+                    <p>{this.state.connection}</p>
                     {mapMessages}
                 </BorderStyle>
             </StyledChat>
