@@ -32,6 +32,11 @@ const ButtonsStyle = styled('button')`
         color:  white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 1024px) {
+    // width: 110px;
+    // height: 55px;
+    // font-size: 20px;
+    // }
 `;
 
 const InnerDisplay = styled('div')`
@@ -47,6 +52,15 @@ width: 80vw;
 height: 70%;
 // horizontal-overflow: scroll;
 position: relative;
+// @media (max-width: 768px) {
+//     width: 72vw;
+    
+// }
+// @media (max-width: 1024px) {
+//  width: 76vw;
+//  height: 80%;
+
+// }
 `;
 
 const DateStyle = styled('p')`
@@ -57,6 +71,11 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 font-weight: bolder;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 1024px) {
+//  top: 30px;
+//  font-size: 30px;   
+//  position: absolute;
+// }
 `
 const TitleStyle = styled('p')`
 position: absolute;
@@ -65,6 +84,11 @@ font-weight: bolder;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 1024px) {
+//     position: absolute;
+//  top: 30px;
+//  font-size: 30px;   
+// }
 `
 
 const ContentBorder = styled('div')`
@@ -77,6 +101,14 @@ overflow-wrap: break-word;
 word-wrap: break-word;
 position: absolute;
 bottom: 10px;
+// @media (max-width: 768px) {
+//     width: 90%;
+//     height: 83%;
+// }
+// @media (max-width: 1024px) {
+//  width: 92%;
+//  height: 85%;   
+// }
 `
 const ContentStyle = styled('p')`
 font-size: 17px;
@@ -88,6 +120,12 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 text-align: left;
 position: absolute;
 top: 0px;
+// @media (max-width: 768px) {
+//     width: 96.5%;
+// }
+// @media (max-width: 1024px) {
+//  font-size: 25px;   
+// }
 `
 const BackStyle = styled('button')`
 width: 65px;
@@ -105,6 +143,19 @@ transition: .5s;
     background: #B1A296;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+// @media (max-width: 768px) {
+//     left: 2%
+//     position: absolute;
+//     top: 190px;
+// }
+// @media (max-width: 1024px) {
+//  position: absolute;
+//  top: 240px;
+//  width: 70px;
+//  height: 45px;
+//  font-size: 30px;
+//  left: 2.3%;   
+// }
 `;
 
 
@@ -119,6 +170,16 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 font-weight: bolder;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 768px) {
+//  font-size: 16px;
+//  width: 140px;   
+// }
+// @media (max-width: 1024px) {
+//     top: 34px;
+//  width: 200px;
+//  height: 33px;
+//  font-size: 19px;   
+// }
 `
 
 const TitleStyleInput = styled('input')`
@@ -131,6 +192,16 @@ font-weight: bolder;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 768px) {
+//     width: 170px;
+//     font-size: 16px;
+// }
+// @media (max-width: 1024px) {
+//     top: 34px;
+//  width: 250px;
+//  height: 33px;
+//  font-size: 19px   
+// }
 `
 
 const ContentBorderInput = styled('div')`
@@ -144,6 +215,14 @@ border-radius: 5px;
 position: absolute;
 bottom: 10px;
 display: inline-block;
+// @media (max-width: 768px) {
+//     width: 91%;
+//     height: 83%
+// }
+// @media (max-width: 1024px) {
+//  height: 87%;
+//  width: 93%;   
+// }
 `
 const ContentStyleInput = styled('textarea')`
 font-size: 17px;
@@ -154,6 +233,9 @@ border-radius: 5px;
 // position: absolute;
 vertical-align: text-top;
 // padding: 11px 0px 11px 0px;
+// @media (max-width: 1024px) {
+//  font-size: 23px;   
+// }
 `
 
 class EntryDisplay extends Component{

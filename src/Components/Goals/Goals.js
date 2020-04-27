@@ -31,6 +31,15 @@ const ButtonsStyle = styled('button')`
         font-weight: bolder;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (min-width: 768px) {
+    // font-size: 14px;
+    // height: 45px;
+    // }
+    // @media (min-width: 1024px) {
+    // width: 120px;
+    // height: 55px;
+    // font-size: 20px;
+    // }
 `;
 
 const Map = styled('button')`
@@ -50,6 +59,10 @@ const Map = styled('button')`
         background: #B1A296;
         color: white;
     }
+    // @media (min-width: 1024px) {
+    // height: 140px;
+    // font-size: 25px;
+    // }
 `
 
 const Align = styled('div')`
@@ -58,6 +71,12 @@ justify-content: space-between;
 width: 45vw;
 align-items: center;
 margin: 10px;
+// @media (min-width: 768px) {
+//  width: 62vw;   
+// }
+// @media (min-width: 1024px) {
+//  width: 58vw;   
+// }
 `;
 
 const StyledSearch = styled('input')`
@@ -67,6 +86,15 @@ height: 25px;
 color: #696e75;
 width: 130px;
 // margin-right: 10px;
+// @media (min-width: 768px) {
+//  height: 30px;
+//  font-size: 16px;   
+// }
+// @media (min-width: 1024px) {
+//  height: 42px;
+//  width: 190px;
+//  font-size: 18px;
+// }
 `;
 
 const AlignArray = styled('div')`
@@ -85,6 +113,9 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 
 const Category = styled('div')`
 width: 450px;
+// @media (min-width: 768px) {
+//  width: 300px;   
+// }
 `
 
 const CheckBox = styled('input')`

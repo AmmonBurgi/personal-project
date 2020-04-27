@@ -14,11 +14,15 @@ flex-direction: column;
 position: relative;
 font-size: 20px;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+// @media (max-width: 1024px) {
+//  font-size: 24px;
+// }
 `;
 
 const About = styled('p')`
 width: 82%;
 // margin-top: 30px;
+
 `
 
 const BorderStyle = styled('div')`
@@ -30,6 +34,13 @@ top: 10px;
 position: absolute;
 width: 73%;
 height: 83.5vh;
+// @media (max-width: 768px) {
+//     width: 78%
+// }
+// @media (max-width: 1024px) {
+//  width: 76%;   
+//  height: 87vh;
+// }
 
 `;
 
@@ -50,10 +61,23 @@ const Map = styled('div')`
     // border: 3px solid #557A95;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 768px) {
+    // margin-top: 85px;
+    // width: 45%;
+    // }
+    // @media (max-width: 1024px) {
+    // width: 58%;
+    // height: 220px;
+    // margin-top: 80px;
+    // font-size: 40px;
+    // }
 `
 
 const TitleStyled = styled('p')`
 font-size: 30px;
+// @media (max-width: 1024px) {
+//  font-size: 40px;   
+// }
 `
 
 const InnerBorder = styled('div')`
@@ -62,7 +86,12 @@ border-top: 3px solid white;
 border-bottom: 3px solid white; 
 display: flex;
 justify-content: center;
-
+// @media (max-width: 768px) {
+//     width: 78%;
+// }
+// @media (max-width: 1024px) {
+//  width: 76%;   
+// }
 `;
 const Home = (props) =>{
 

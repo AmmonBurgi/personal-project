@@ -29,6 +29,11 @@ const ButtonsStyle = styled('button')`
         font-weight: bolder;
         color:  white;
     }
+    // @media (min-width: 1024px) {
+    //     width: 110px;
+    //     height: 55px;
+    //     font-size: 20px;
+    //     }
 `;
 
 const InnerDisplay = styled('div')`
@@ -44,6 +49,15 @@ width: 80vw;
 height: 70%;
 // horizontal-overflow: scroll;
 position: relative;
+// @media (min-width: 768px) {
+//  width: 77vw;
+
+// }
+// @media (min-width: 1024px) {
+//     width: 76vw;
+//     height: 80%;
+   
+//    }
 `;
 
 const TitleStyle = styled('p')`
@@ -53,6 +67,11 @@ font-weight: bolder;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (min-width: 1024px) {
+//     position: absolute;
+//  top: 30px;
+//  font-size: 30px;   
+// }
 `
 
 const ContentBorder = styled('div')`
@@ -65,6 +84,14 @@ overflow-wrap: break-word;
 word-wrap: break-word;
 position: absolute;
 bottom: 10px;
+// @media (min-width: 768px) {
+//  width: 92%;
+//  height: 83%;   
+// }
+// @media (min-width: 1024px) {
+//     width: 92%;
+//     height: 85%;   
+//    }
 `
 const ContentStyle = styled('p')`
 font-size: 17px;
@@ -75,6 +102,9 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 text-align: left;
 // position: absolute;
 // left: 0px;
+// @media (min-width: 1024px) {
+//     font-size; 25px;   
+//    }
 `
 const BackStyle = styled('button')`
 width: 65px;
@@ -92,6 +122,22 @@ transition: .5s;
     background: #B1A296;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+// @media (min-width: 768px) {
+//  width: 55px;
+//  height: 35px;   
+//  position: absolute;
+//  left: 2%;
+//  top: 190px;
+
+// }
+// @media (min-width: 1024px) {
+//     position: absolute;
+//     top: 240px;
+//     width: 70px;
+//     height: 45px;
+//     font-size: 30px;
+//     left: 2.3%;   
+//    }
 `;
 const GoalDisplay = (props) => {
 

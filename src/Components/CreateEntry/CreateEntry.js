@@ -25,6 +25,13 @@ width: 80vw;
 height: 70%;
 // horizontal-overflow: scroll;
 position: relative;
+// @media (max-width: 768px) {
+//  width: 75vw;   
+// }
+// @media (max-width: 1024px) {
+//  width: 74vw;
+//  height: 80%;
+// }
 `;
 
 const DateStyle = styled('input')`
@@ -38,6 +45,15 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 font-weight: bolder;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 768px) {
+//  font-size: 16px;
+   
+// }
+// @media (max-width: 1024px) {
+//  width: 200px;
+//  height: 33px;
+//  font-size: 19px;   
+// }
 `
 
 const TitleStyle = styled('input')`
@@ -50,6 +66,15 @@ font-weight: bolder;
 font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 // bottom-border: 2px solid black;
 // text-decoration: underline;
+// @media (max-width: 768px) {
+//  font-size: 16px;   
+// }
+// @media (max-width: 1024px) {
+//  width: 250px;
+//  height: 33px;
+//  font-size: 19px
+
+// }
 `
 
 const ContentBorder = styled('div')`
@@ -63,7 +88,14 @@ border-radius: 5px;
 position: absolute;
 bottom: 10px;
 display: inline-block;
-
+// @media (max-width: 768px) {
+//     width: 92%;
+//     height: 83%;
+// }
+// @media (max-width: 1024px) {
+//  height: 87%;
+//  width: 93%;   
+// }
 `
 const ButtonsStyle = styled('button')`
     width: 120px;
@@ -88,6 +120,11 @@ const ButtonsStyle = styled('button')`
         color:  white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 1024px) {
+    // width: 110px;
+    // height: 55px;
+    // font-size: 20px;
+    // }
 `;
 
 const BackStyle = styled('button')`
@@ -106,6 +143,20 @@ transition: .5s;
     background: #B1A296;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+// @media (max-width: 768px) {
+//     width: 55px;
+//     height: 35px;
+//     position: absolute;
+//     left: 2%;
+//     top: 190px;
+// }
+// @media (max-width: 1024px) {
+//  position: absolute;
+//  top: 240px;
+//  width: 70px;
+//  height: 45px;
+//  font-size: 30px;   
+// }
 `;
 const ContentStyle = styled('textarea')`
 font-size: 17px;
@@ -116,6 +167,9 @@ border-radius: 5px;
 // position: absolute;
 vertical-align: text-top;
 // padding: 11px 0px 11px 0px;
+// @media (max-width: 1024px) {
+//  font-size: 23px;   
+// }
 `
 const CreateEntry = (props) => {
 const [date, setDate] = useState('')

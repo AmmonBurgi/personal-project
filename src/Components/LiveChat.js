@@ -20,13 +20,11 @@ height: 85%;
 display: flex;
 // align-items: flex-start;
 justify-content: center;
-
 `;
 const BorderStyle = styled('div')`
 border-right: 5px solid white;
 border-left: 5px solid white;
 border-top: 5px solid white;
-// border: 5px solid white;
 margin: 10px;
 position: relative;
 width: 50%;
@@ -35,18 +33,26 @@ display: flex;
 overflow-wrap: break-word;
 word-wrap: break-word;
 flex-direction: column;
-// align-items: flex-start;
-// justify-content: flex-start;
-// align-text: left;
 height: 94%;
-`;
+// @media (max-width: 768px) {
+//  height: 96%;   
+//  width: 75%;
+// }
+// @media (min-width: 1024px) {
+//     width: 74.5%;
+//     height: 99%;
+//    }
+// `;
 
 const StyledMessages = styled('div')`
 display: flex;
 width: 98%;
 // flex-direction: column;
 // float: right;
-`;
+// @media (min-width: 1024px) {
+//    font-size: 30px;
+//    }
+// `;
 
 const CurrentUserStyle = styled('div')`
 color: rgb(255, 230, 209);
@@ -64,7 +70,15 @@ const StyledInput = styled('input')`
 width: 40%;
 border-radius: 5px;
 height: 20px;
-`;
+// @media (max-width: 768px) {
+//  height: 31px;
+//  font-size: 15px;   
+// }
+// @media (min-width: 1024px) {
+//     height: 42px;
+//     font-size: 18px;
+//    }
+// `;
 
 const StyledButton = styled('button')`
     width: 70px;
@@ -85,6 +99,16 @@ const StyledButton = styled('button')`
         font-weight: bolder;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 768px) {
+    // font-size: 16px;
+    // width: 80px;
+    // height: 33px;
+    // }
+    // @media (min-width: 1024px) {
+    //     width: 100px;
+    //     height: 46px;
+    //     font-size: 20px;
+    //    }
 `;
 
 const Align = styled('div')`

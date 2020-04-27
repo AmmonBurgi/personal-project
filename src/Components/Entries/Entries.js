@@ -34,10 +34,19 @@ const ButtonsStyle = styled('button')`
         font-weight: bolder;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 768px) {
+    // height: 45px;
+    // font-size: 14px;
+    // }
+    // @media (max-width: 1024px) {
+    // height: 55px;
+    // width: 130px;
+    // font-size: 18px;
+    // }
 `;
 
 const Map = styled('button')`
-    width: 50vw;
+    width: 58vw;
     height: 100px;
     background: white;
     color: #557A95;
@@ -53,6 +62,11 @@ const Map = styled('button')`
         background: #B1A296;
         color: white;
     }
+    // @media (max-width: 1024px) {
+    // width: 60vw;
+    // height: 120px;
+    // font-size: 25px;
+    // }
 `
 
 const Align = styled('div')`
@@ -61,6 +75,12 @@ justify-content: space-between;
 width: 45vw;
 align-items: center;
 margin: 10px;
+// @media (max-width: 768px) {
+//  width: 58%;   
+// }
+// @media (max-width: 1024px) {
+//  width: 60%;   
+// }
 `;
 
 const StyledSearch = styled('input')`
@@ -69,6 +89,14 @@ padding: 5px;
 height: 25px;
 width: 130px;
 // margin-right: 10px;
+// @media (max-width: 768px) {
+//     height: 30px;
+// }
+// @media (max-width: 1024px) {
+//  height: 45px;
+//  width: 158px;
+//  font-size: 15px;   
+// }
 `;
 
 class Entries extends Component{

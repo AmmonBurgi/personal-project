@@ -13,6 +13,10 @@ padding: 10px;
 // margin: 10px;
 position: absolute;
 bottom: 0px;
+// @media (max-width: 1024px) {
+//  height: 520px;   
+//  width: 69vw;
+// }
 `;
 
 const ButtonsStyle = styled('button')`
@@ -34,6 +38,12 @@ const ButtonsStyle = styled('button')`
         font-weight: bolder;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    // @media (max-width: 1024px) {
+    // width: 140px;
+    // height: 55px;
+    // font-size: 17px;
+    // margin-top: 57px;
+    // }
 `;
 
 const Titles = styled('p')`
@@ -44,7 +54,9 @@ font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 
 const QuillStyle = styled(ReactQuill)`
 height: 180px;
-// background: white;
+// @media (max-width: 1024px) {
+//  height: 330px;   
+// }
 `
 
 const FeedBack = () => {

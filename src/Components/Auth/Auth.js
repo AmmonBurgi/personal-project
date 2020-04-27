@@ -28,16 +28,25 @@ padding: 10px;
 width: 45%;
 height: 500px;
 margin: 10%;
-@media (max-width: 768px) {
-    width: 55%;
-    height: 550px;
-}
+// @media (max-width: 768px) {
+//     width: 55%;
+//     height: 550px;
+// }
+// @media (max-width: 1024px) {
+//     width: 65%;
+//     height: 600px;
+//     font-size: 22px;
+//     // padding: 7px;
+// }
 `;
 
 const Logo = styled('img')`
 width: 200px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border-radius: 5px;
+// @media (max-width: 1024px) {
+//  width: 250px;   
+// }
 `; 
 
 const Inputs = styled('input')`
@@ -47,6 +56,9 @@ background: transparent;
 color: #696e75;
 width: 215px;
 font-size: 20px;
+// @media (max-width: 1024px) {
+//  width: 250px;   
+// }
 `;
 
 const ButtonsStyle = styled('button')`
@@ -66,11 +78,16 @@ const ButtonsStyle = styled('button')`
         background:  #7395AE;
         color: white;
     }
-    @media (max-width: 768px) {
-        width: 150px;
-        height: 55px;
-        font-size: 20px;
-    }
+    // @media (max-width: 768px) {
+    //     width: 150px;
+    //     height: 55px;
+    //     font-size: 20px;
+    // }
+    // @media (max-width: 1024px) {
+    // width: 190px;
+    // height: 60px;
+    // font-size: 28px;
+    // }
 `;
 
 const Toggle = styled('button')`
@@ -78,24 +95,34 @@ border: none;
 background: transparent;
 color: #557A95;
 font-size: 15px;
+// @media (max-width: 1024px) {
+//  font-size: 20px;   
+// }
 `;
 
 const Tag = styled('p')`
 position: absolute;
 bottom: 5px;
 left: 36%;
-@media (max-width: 768px) {
-    left: 28%
-}
+// @media (max-width: 768px) {
+//     left: 28%
+// }
+// @media (max-width: 1024px) {
+//  left: 31.5%;   
+// }
 `;
 
 const AltTag = styled('p')`
 position: absolute;
 bottom: 0px;
 left: 34%;
-@media (max-width: 768px) {
-    left: 26%;
-}
+// @media (max-width: 768px) {
+//     left: 26%;
+// }
+// @media (max-width: 1024px) {
+//  left: 30%;   
+// //  margin-top: 3px;
+// }
 `;
 
 class Auth extends Component{
