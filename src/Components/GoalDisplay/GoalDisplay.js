@@ -163,6 +163,7 @@ const goBack = () => {
 }
 
 useEffect((props) => getGoal(props))
+console.log(props)
         return(
             <GoalStyle>
                 <BackStyle onClick={goBack}>&#8592;</BackStyle>

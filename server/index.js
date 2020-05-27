@@ -8,7 +8,7 @@ const express = require('express'),
       goalCtrl = require('./goalController'),
       feedCtrl = require('./feedController'),
       app = express(),
-    //   path = require('path'),
+      path = require('path'),
       server = require('http').Server(app),
       io = require('socket.io')(server, { origins: '*:*'}),
       port = SERVER_PORT
@@ -35,10 +35,10 @@ io.on('connection', (socket) => {
     })
 })
 
-// app.use(express.static(__dirname + '/../build'))
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../build/index.html'))
-// })
+app.use(express.static(__dirname + '/../build'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 app.use(session({
     resave: false,
